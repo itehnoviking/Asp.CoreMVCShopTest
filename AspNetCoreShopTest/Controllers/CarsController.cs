@@ -14,7 +14,8 @@ namespace AspNetCoreShopTest.Controllers
             _allCarsCategory = iCarsCat;
         }
 
-        public IActionResult Index()
+        public IActionResult List()
+
         {
             var cars = _allCars.Cars;
             return View(cars);

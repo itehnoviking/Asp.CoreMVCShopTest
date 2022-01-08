@@ -1,0 +1,53 @@
+﻿@*@using AspNetCoreShopTest.Models
+@model IEnumerable<Car>*@
+
+@{
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <h2>All cars</h2>
+        
+        <div class="row mt-5 mb-2">
+        @{
+            foreach(var car in Model){
+
+                <div class="col-lg-4">
+                    <img class="img-thumbnail" src="@car.Img" alt="@car.Name"/>
+                    <h3>Model: @car.Name</h3>
+                    <p>@car.ShortDesc</p>
+                    <p>Price: @car.Price.ToString("c", CultureInfo.CreateSpecificCulture("en-US"))</p>
+                    <p><a class="btn btn-warning" href="#">More Details</a></p>
+                </div>
+            }
+        }
+        </div>
+    </body>
+</html>
+
+
+        @*<h1>All cars</h1>
+        <h3>@Model.CurrCategory</h3>
+        <div class="row mt-5 mb-2">
+            @{
+            
+                foreach(var car in Model.AllCars)
+                {
+                <div class="col-lg-4">
+                <img class="img-thumbnaill" src="@car.img" alt="@car.name" />
+                <h2>@car.name</h2>
+                <p>@car.shortDesc</p>
+                <p>Price: @car.price.ToString("c", CultureInfo.CreateSpecificCulture("en-US"))</p>
+                <p><a class="btn btn-warning" href="#">More Details</a></p>
+                </div>
+                }
+            }
+
+        </div>*@
